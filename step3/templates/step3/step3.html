@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Step3</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- D3.js -->
+		<script src="https://d3js.org/d3.v2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "step3/main.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "step3/graph.css" %}">
+	</head>
+	<body>
+		<div class="alert alert-info" id="instructions">
+			<h4>Instructions: Connect the Dots</h4>
+			<p>On the left is a set of documents describing relationships between various items (people, locations, organizations, etc.) Those same items are also shown on the right; each item is a dot on the visualization. Your task is to "connect the dots"; that is, to create links between the dots that visualize their relationships in the documents.</p>
+			<p>You can pick an item in any of 3 ways:</p>
+			<ol>
+				<li>click the item in the document</li>
+				<li>click the dot in the visualization, or </li>
+				<li>pick the item from the menu above the visualization.</li>
+			</ol>
+			<p>Next, pick the item you want to link it to. Finally, describe the link in a few words using the "relationship" box, and click "Create Link".</p>
+			<button class="btn btn-info" id="fadeOut">ok, I got it</button>
+		</div>
+		<div class="col-lg-4 panel-group" id="doc-panel">
+			<div id = "doc-contents" class="panel panel-default">
+				<!--<p class="alert alert-info">Select Node1 from documents</p>-->
+				<button type="button" class="btn btn-info" id="fadeIn" style="display:none">Show Instructions</button>
+				<button type="button" class="btn btn-default toggle-legend">Show Legend</button>
+				<button class="btn btn-default All" style="display:none">Hide All Category Highlight</button>
+				<div id = "legend" class="panel panel-default collapse">
+					<!--<div class="inline"><button class="btn btn-default category Person"></button><label class="legend-label">Person</label></div>
+					<div class="inline"><button class="btn btn-default category Location"></button><label class="legend-label">Location</label></div>
+					<div class="inline"><button class="btn btn-default category Organization"></button><label class="legend-label">Organization</label></div>
+					<div class="inline"><button class="btn btn-default category Money"></button><label class="legend-label">Money</label></div>
+					<div class="inline"><button class="btn btn-default category Misc"></button><label class="legend-label">Miscellaneous</label></div>
+					<div class="inline"><button class="btn btn-default category Phone"></button><label class="legend-label">Phone</label></div>
+					<div class="inline"><button class="btn btn-default category Interesting"></button><label class="legend-label">Interesting</label></div>
+					<div class="inline"><button class="btn btn-default category Date"></button><label class="legend-label">Date</label></div>
+					<div class="inline"><button class="btn btn-default category All"></button><label class="legend-label">Hide All Category Highlight</label></div>-->
+					<div class="inline"><button class="btn btn-default category Person highlight">Person</button></div>
+					<div class="inline"><button class="btn btn-default category Location highlight">Location</button></div>
+					<div class="inline"><button class="btn btn-default category Organization highlight">Organization</button></div>
+					<div class="inline"><button class="btn btn-default category Money highlight">Money</button></div>
+					<div class="inline"><button class="btn btn-default category Misc highlight">Miscellaneous</button></div>
+					<div class="inline"><button class="btn btn-default category Phone highlight">Phone</button></div>
+					<div class="inline"><button class="btn btn-default category Interesting highlight">Interesting</button></div>
+					<div class="inline"><button class="btn btn-default category Date highlight">Date</button></div>
+				</div>
+				<!--
+				<h3 class="panel panel-heading doc-header">Doc1</h3>
+				<div id = "Doc1" class="collapse in">
+					<h5 class="panel panel-footer">Report Date:22 April, 2003</h5>
+					<p class="panel panel-body"><em class="highlight person">Hani al Hallak</em>, of <em class="highlight location">North Bergen NJ</em>, has deposited checks in his bank account that were drawn on <em class="highlight organization">First Union Bank</em> account number <em class="highlight miscellanea">1070173749003</em> in <em class="highlight location">Springfield VA</em> in the name <em class="highlight person">Abdul Ramazi</em>. The latest check is dated <em class="highlight date">16 April, 2003</em> and was in the amount of <em class="highlight money">$8500</em>.</p>
+				</div>
+				<h3 class="panel panel-heading doc-header">Doc2</h3>
+				<div id = "Doc2" class="collapse in">
+					<h5 class="panel panel-footer">Report Date 22 April, 2003. CIA [From Dutch Security]</h5>
+					<p class="panel panel-body">Two men were arrested on <em class="highlight date">April 20, 2003</em> by Dutch police in <em class="highlight location">Haarlem, The Netherlands</em> after leaving the scene of an accident in which they were involved. Later on <em class="highlight date">April 21, 2003</em> these men were identified as <em class="highlight person">Tawfiq al Adel</em> and <em class="highlight person">Saeed Khaliad</em> who have been wanted in <em class="highlight location">Hamburg. Germany</em> in connection with investigations of <em class="highlight miscellanea">Al Qaeda operations</em> in Europe. They were driving a panel truck rented in <em class="highlight location">Hamburg, Germany</em>. <em class="highlight interesting">Radioactive traces</em> were found in bed of this truck.</p>
+				</div>
+				<h3 class="panel panel-heading doc-header">Doc3</h3>
+				<div id = "Doc3" class="collapse in">
+					<h5 class="panel panel-footer">Report Date 27 April, 2003.</h5>
+					<p class="panel panel-body">Intercept of cell phone <em class="highlight phone">804-774-8920</em>. In a very brief call from this number to phone number <em class="highlight phone">703-659-2317</em> on <em class="highlight date">26 April, 2003</em>, the caller speaks in Arabic. A translation reads: "We are now prepared to <em class="highlight interesting">take the crescent to victory</em>".</p>
+				</div>
+			-->
+			</div>
+		</div>
+		<div class="col-lg-8 panel-group fixed" id="edit-panel-div">
+			<div class="panel panel-default">
+				<p class="alert" id="graph-instructions" style="display:none"></p>
+				<h3 class="panel panel-heading">Connect The Dots</h3>
+				<div id = "edit-panel" class = "collapse">
+					<div class="panel panel-body" id="combo-box">
+						<form id = "linkform" class="form-inline" role="form" method="post" action="http://localhost:8000/step3/addLink/">
+							{% csrf_token %}
+							<div class="form-group">
+								<label class="control-label" for="node1">Dot 1: </label>
+								<select class="form-control nodelist" name="node1" id="node1">
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="node2">Dot 2: </label>
+								<select class="form-control nodelist" name="node2" id="node2">
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="edgeNote">Relationship: </label>
+								<input type="text" class="form-control" name="relationship_description" id="newNote" placeholder="How are these dots related?"/>
+								
+							</div>
+							<div id="importance-rating">
+								<label>How important is this relationship?</label>
+								<div id="slide-container">
+									<span class="extrememark">Not Important At All</span>
+									<input type="range" name="importance" id="impSlider" min="1" max="5" value="3" step="1" />
+									<span class="extrememark">Absolutely Important</span>
+									<div id="importance">Of Average Importance</div>
+								</div>
+								<!--<div class="ticks">
+									<span>Not Important At All</span>
+									<span>Of Little Importance</span>
+									<span>Of Average Importance</span>
+									<span>Very Important</span>
+									<span>Absolutely Essential</span>
+								</div>-->
+							</div>
+							<div>
+								<button type="button" class="btn btn-mini inline" id="reset">Reset</button>
+								<button type="submit" class="btn btn-mini inline" id="editLink">Create Link</button>
+								<button type="button" class="btn btn-mini inline" id="deleteEdge">Delete Link</button>
+							</div>
+							<!--
+							<div class="col-sm-12 collapse-btn">
+								<button type="button" class="btn btn-default" id="createEdge">Create Edge<br></button>
+								<button type="button" class="btn btn-default" id="deleteEdge">Delete Edge<br></button>
+								<button type="button" class="btn btn-default" id="cancel">Cancel<br></button>
+							</div>
+							--> 
+						</form>
+					</div>
+				</div> <!-- added -->
+				<button class="btn edit" id="new-link-btn">Create New Links</button>
+				<div id="container">
+					<div id="zoom-btn">
+						<div><button id="zoom_in" class="btn-default zoom">+</button></div>
+						<div><button id="zoom_out" class="btn-default zoom">-</button></div>
+					</div>
+					<div id="graph-editor"></div>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="{% static "step3/step3_document.js" %}"></script>
+	<script type="text/javascript" src="{% static "step3/graph_editor.js" %}"></script>
+	<!--<script type="text/javascript" src="graph_update.js"></script>
+	<script type="text/javascript" src="graphDecoration.js"></script>-->
+	</body>
+</html>

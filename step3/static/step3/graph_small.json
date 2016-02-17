@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "category": "Person",
+            "docid": "fbi16",
+            "name": "Abdul Ramazi"
+        },
+        {
+            "category": "Date",
+            "docid": "fbi16",
+            "name": "22 April, 2003"
+        },
+        {
+            "category": "Location",
+            "docid": "fbi16",
+            "name": "New Jersey"
+        },
+        {
+            "category": "Organization",
+            "docid": "fbi16",
+            "name": "FBI"
+        },
+        {
+            "category": "Misc",
+            "docid": "fbi16",
+            "name": "1070173749003"
+        },
+        {
+            "category": "Organization",
+            "docid": "fbi16",
+            "name": "First Union Bank"
+        },
+        {
+            "category": "Location",
+            "docid": "fbi16",
+            "name": "North Bergen"
+        },
+        {
+            "category": "Date",
+            "docid": "fbi16",
+            "name": "16 April, 2003"
+        },
+        {
+            "category": "Location",
+            "docid": "fbi16",
+            "name": "Springfield VA"
+        },
+        {
+            "category": "Person",
+            "docid": "fbi16",
+            "name": "Hani al Hallak"
+        },
+        {
+            "category": "Money",
+            "docid": "fbi16",
+            "name": "$8500"
+        },
+        {
+            "category": "Organization",
+            "docid": "cia7",
+            "name": "CIA"
+        },
+        {
+            "category": "Location",
+            "docid": "cia7",
+            "name": "The Netherlands"
+        },
+        {
+            "category": "Organization",
+            "docid": "cia7",
+            "name": "Al Qaeda"
+        },
+        {
+            "category": "Location",
+            "docid": "cia7",
+            "name": "Germany"
+        },
+        {
+            "category": "Location",
+            "docid": "cia7",
+            "name": "Hamburg"
+        },
+        {
+            "category": "Misc",
+            "docid": "cia7",
+            "name": "Dutch"
+        },
+        {
+            "category": "Person",
+            "docid": "cia7",
+            "name": "Tawfiq al Adel"
+        },
+        {
+            "category": "Location",
+            "docid": "cia7",
+            "name": "Haarlem"
+        },
+        {
+            "category": "Person",
+            "docid": "cia7",
+            "name": "Saeed Khaliad"
+        },
+        {
+            "category": "Location",
+            "docid": "cia7",
+            "name": "Europe"
+        },
+        {
+            "category": "Date",
+            "docid": "cia7",
+            "name": "April 20, 2003"
+        },
+        {
+            "category": "Date",
+            "docid": "cia7",
+            "name": "April 21, 2003"
+        },
+        {
+            "category": "Date",
+            "docid": "se5",
+            "name": "27 April, 2003"
+        },
+        {
+            "category": "Phone",
+            "docid": "se5",
+            "name": "703-659-2317"
+        },
+        {
+            "category": "Phone",
+            "docid": "se5",
+            "name": "804-774-8920"
+        },
+        {
+            "category": "Date",
+            "docid": "se5",
+            "name": "26 April, 2003"
+        },
+        {
+            "category": "Misc",
+            "docid": "se5",
+            "name": "Arabic"
+        }
+    ],
+    "contents": [
+        {
+            "doctext": "Report Date 22 April, 2003. FBI: Hani al Hallak, of North Bergen NJ, has deposited checks in his bank account that were drawn on First Union Bank account number 1070173749003 in Springfield VA in the name Abdul Ramazi. The latest check is dated 16 April, 2003 and was in the amount of $8500.",
+            "docid": "fbi16"
+        },
+        {
+            "doctext": "Report Date 22 April, 2003. CIA [From Dutch Security]: Two men were arrested on April 20, 2003 by Dutch police in Haarlem, The Netherlands after leaving the scene of an accident in which they were involved. Later on April 21, 2003 these men were identified as Tawfiq al Adel and Saeed Khaliad who have been wanted in Hamburg. Germany in connection with investigations of Al Qaeda operations in Europe. They were driving a panel truck rented in Hamburg, Germany. Radioactive traces were found in bed of this truck.",
+            "docid": "cia7"
+        },
+        {
+            "doctext": "Report Date 27 April, 2003: Intercept of cell phone 804-774-8920. In a very brief call from this number to phone number 703-659-2317 on 26 April, 2003, the caller speaks in Arabic. A translation reads: \"We are now prepared to take the crescent to victory\".",
+            "docid": "se5"
+        }
+    ],
+    "links": []
+}

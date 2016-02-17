@@ -1,0 +1,8 @@
+<h1>Hello!</h1>
+{% if documents %}
+	<ul>
+	{% for document in documents %}
+		<li><a herf="/step3/slice_{{ document.id }}/"> {{ document.doc_text }} </a></li>
+	{% endfor %}
+	</ul>
+{% endif %}
